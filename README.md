@@ -20,11 +20,8 @@ A simple onboarding dashboard to help interns, fresh graduates, and new employee
 
 Clone the repository and open `index.html` in your browser.
 
-```bash
-git clone YOUR_REPOSITORY_URL
-```
 
 ## Live Demo
-
-Coming soon.
-
+```bash
+https://chostanz.github.io/OnboardMate/ 
+```
