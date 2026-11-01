@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnboardMate — Your first days, made easier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="OnboardMate home">
+        <svg class="logo-mark" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="11" fill="#355744"/>
+          <path d="M7 11.5 L11 7 L15 11.5" stroke="#F7F8F2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M9 11.5 L9 16 L13 16 L13 11.5" stroke="#F7F8F2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span class="logo-text">OnboardMate</span>
+      </a>
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="#welcome" class="nav-link active">Overview</a>
+        <a href="#checklist" class="nav-link">Checklist</a>
+        <a href="#buddy" class="nav-link">Buddy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== WELCOME ===== -->
+    <section id="welcome" class="section welcome-section" aria-labelledby="welcome-heading">
+      <div class="container welcome-container">
+
+        <!-- Left: editorial headline + role setup -->
+        <div class="welcome-left">
+          <p class="eyebrow">Your onboarding guide</p>
+          <h1 id="welcome-heading" class="welcome-headline">
+            Your first days,<br>made a little easier.
+          </h1>
+          <p class="welcome-body">
+            Welcome, <strong id="display-name">there</strong>. This is your personal onboarding space —
+            a quiet place to check off tasks, ask questions, and feel ready
+            before the big day.
+          </p>
+
+          <div class="role-chip-row" aria-label="Your current role">
+            Onboarding as
+            <strong id="display-role-badge" class="role-badge role-badge--new">New Employee</strong>
+          </div>
+        </div>
+
+        <!-- Right: setup panel -->
+        <aside class="welcome-right" aria-label="Set up your profile">
+          <p class="panel-label">Tell us about you</p>
+
+          <div class="field-group">
+            <label for="name-input" class="form-label">First name</label>
+            <input
+              type="text"
+              id="name-input"
+              class="name-input field-input"
+              placeholder="e.g. Alex"
+              maxlength="40"
+              aria-label="Enter your first name"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="role-select" class="form-label">I am joining as</label>
+            <select id="role-select" class="role-select field-input" aria-label="Select your role">
+              <option value="new">New Employee</option>
+              <option value="intern">Intern</option>
+              <option value="grad">Fresh Graduate</option>
+            </select>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ===== PROGRESS BAND ===== -->
+    <div class="progress-band" id="dashboard" aria-labelledby="progress-heading">
+      <div class="container progress-inner">
+        <div class="progress-text-col">
+          <h2 id="progress-heading" class="progress-heading">Onboarding progress</h2>
+          <p class="progress-message" id="progress-message">Start checking off tasks to track your progress.</p>
+        </div>
+        <div class="progress-meter-col">
+          <div class="progress-fraction">
+            <span id="completed-count">0</span><span class="progress-sep">/</span><span id="total-count">0</span>
+            <span class="progress-pct" id="percent-display">0%</span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Onboarding completion">
+            <div class="progress-bar-fill" id="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CHECKLIST ===== -->
+    <section id="checklist" class="section checklist-section" aria-labelledby="checklist-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <h2 id="checklist-heading" class="section-title">Onboarding checklist</h2>
+          <p class="section-sub">Work through these in order. No need to rush — each check marks real progress.</p>
+        </header>
+
+        <div class="checklist-layout">
+
+          <!-- FIRST DAY -->
+          <div class="checklist-column" aria-labelledby="first-day-heading">
+            <div class="column-label">
+              <span class="column-tag">Day one</span>
+              <span class="group-badge" id="day-badge">0 / 0</span>
+            </div>
+            <h3 id="first-day-heading" class="column-title">First day preparation</h3>
+
+            <ul class="checklist-list" id="first-day-list" role="list">
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="day" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Confirm your start time, location, and transit options</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="day" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Prepare identification documents (government ID, signed contract)</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="day" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Set up your work email and read any welcome messages</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="day" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Meet your manager and the people on your immediate team</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="day" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Receive and configure your workstation or laptop</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="day" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Review and sign your employment contract and HR paperwork</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="day" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Attend the HR welcome or orientation session</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <!-- DIVIDER -->
+          <div class="checklist-divider" aria-hidden="true"></div>
+
+          <!-- FIRST WEEK -->
+          <div class="checklist-column" aria-labelledby="first-week-heading">
+            <div class="column-label">
+              <span class="column-tag column-tag--week">First week</span>
+              <span class="group-badge" id="week-badge">0 / 0</span>
+            </div>
+            <h3 id="first-week-heading" class="column-title">First week activities</h3>
+
+            <ul class="checklist-list" id="first-week-list" role="list">
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="week" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Complete all mandatory compliance and safety training</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="week" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Schedule a first 1-on-1 with your onboarding buddy</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="week" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Get comfortable with your key tools (Slack, Jira, Confluence…)</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="week" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Read through the employee handbook and company policies</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="week" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Join the team standup or all-hands for the first time</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="week" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Set up your profiles on internal directories and channels</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="week" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Agree on your 30-60-90 day goals with your manager</span>
+                </label>
+              </li>
+              <li class="checklist-item" role="listitem">
+                <label class="check-label">
+                  <input type="checkbox" class="check-input" data-group="week" />
+                  <span class="check-box" aria-hidden="true"></span>
+                  <span class="check-text">Shadow a senior teammate to see day-to-day workflows</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+        </div><!-- /.checklist-layout -->
+      </div>
+    </section>
+
+    <!-- ===== QUESTIONS ===== -->
+    <section class="section questions-section" aria-labelledby="questions-heading">
+      <div class="container">
+        <header class="section-header section-header--inline">
+          <div>
+            <h2 id="questions-heading" class="section-title">Good questions to ask</h2>
+            <p class="section-sub">You don't have to figure it all out alone. These starters help.</p>
+          </div>
+        </header>
+
+        <div class="questions-layout">
+          <div class="q-group" role="group" aria-label="Questions for your Manager">
+            <h3 class="q-group-title">Your manager</h3>
+            <ul class="q-list">
+              <li>"What are your top priorities for me in the first 30 days?"</li>
+              <li>"How do you prefer to communicate — async or sync?"</li>
+              <li>"What does success look like in this role after 90 days?"</li>
+              <li>"Any common pitfalls I should watch out for?"</li>
+            </ul>
+          </div>
+          <div class="q-group" role="group" aria-label="Questions for HR">
+            <h3 class="q-group-title">HR team</h3>
+            <ul class="q-list">
+              <li>"What benefits am I eligible for, and when do they begin?"</li>
+              <li>"How do I submit expenses or reimbursements?"</li>
+              <li>"Where can I find the employee handbook?"</li>
+              <li>"Who do I contact for payroll questions?"</li>
+            </ul>
+          </div>
+          <div class="q-group" role="group" aria-label="Questions for your Buddy">
+            <h3 class="q-group-title">Your buddy</h3>
+            <ul class="q-list">
+              <li>"What's the unwritten rule everyone here knows?"</li>
+              <li>"What tools do you wish you'd known about sooner?"</li>
+              <li>"Who are the go-to people when you're stuck?"</li>
+              <li>"What's the best way to make a good first impression?"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BUDDY CHAT ===== -->
+    <section id="buddy" class="section buddy-section" aria-labelledby="buddy-heading">
+      <div class="container buddy-container">
+
+        <div class="buddy-intro">
+          <h2 id="buddy-heading" class="section-title">Ask your Onboarding Buddy</h2>
+          <p class="section-sub">
+            Type a question below or pick one of the prompts. This is a demo with scripted replies —
+            <span class="demo-note">not a live AI.</span>
+          </p>
+        </div>
+
+        <div class="chat-shell" role="log" aria-live="polite" aria-atomic="false" aria-label="Onboarding Buddy chat">
+
+          <div class="chat-messages" id="chat-messages">
+            <div class="msg msg--buddy" aria-label="Buddy says">
+              <div class="msg-avatar" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="9" r="9" fill="#355744"/>
+                  <circle cx="6.5" cy="8" r="1.2" fill="#DCE8D5"/>
+                  <circle cx="11.5" cy="8" r="1.2" fill="#DCE8D5"/>
+                  <path d="M6 11.5 Q9 13.5 12 11.5" stroke="#DCE8D5" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="msg-bubble">
+                <p>Hi — I'm your Onboarding Buddy.</p>
+                <p>Ask me anything about getting settled in, or pick a quick question below.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-replies" id="quick-replies" aria-label="Quick question shortcuts">
+            <span class="quick-label">Try asking:</span>
+            <button class="quick-btn" type="button" data-q="What should I do on my first day?">First day tips</button>
+            <button class="quick-btn" type="button" data-q="How do I set up my work tools?">Tool setup</button>
+            <button class="quick-btn" type="button" data-q="What should I know about company culture?">Company culture</button>
+            <button class="quick-btn" type="button" data-q="Who should I meet first?">Who to meet</button>
+            <button class="quick-btn" type="button" data-q="How do I ask for help without bothering people?">Asking for help</button>
+          </div>
+
+          <div class="chat-input-bar">
+            <label for="chat-input" class="sr-only">Type your question</label>
+            <input
+              type="text"
+              id="chat-input"
+              class="chat-input"
+              placeholder="What would you like to know?"
+              maxlength="200"
+              autocomplete="off"
+              aria-label="Type your question to the Onboarding Buddy"
+            />
+            <button type="button" id="chat-send" class="send-btn" aria-label="Send message">
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M2 9L16 2L9 16L8 10L2 9Z" fill="currentColor"/>
+              </svg>
+              Send
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">OnboardMate</span>
+      <span class="footer-copy">Your first week, made a little easier. &copy; <span id="footer-year"></span></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

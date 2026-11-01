@@ -1,0 +1,939 @@
+/* ============================================================
+   OnboardMate — style.css  (editorial redesign)
+
+   Palette
+   ─────────────────────────────────────────────────────
+   Background        #F7F8F2  warm off-white
+   Secondary bg      #DCE8D5  soft sage mist
+   Primary accent    #8FA98B  sage green
+   Dark green        #355744  headings, primary buttons
+   Pink accent       #E8C5C6  small decorative details
+   Main text         #303A32
+   Muted text        #747C72
+   Border            #E2E6DC
+   ============================================================ */
+
+/* ---------- RESET ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: #F7F8F2;
+  color: #303A32;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* Body copy uses a clean sans-serif; headings inherit Georgia from body */
+p, label, input, select, button, li, span, small {
+  font-family: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
+}
+
+a {
+  color: #355744;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  background: #F7F8F2;
+  border-bottom: 1px solid #E2E6DC;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.logo-mark {
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: "Georgia", serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #303A32;
+  letter-spacing: 0.01em;
+}
+
+/* Nav */
+.header-nav {
+  display: flex;
+  gap: 2px;
+}
+
+.nav-link {
+  padding: 5px 14px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #747C72;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #355744;
+  background: #DCE8D5;
+  text-decoration: none;
+}
+
+/* ---------- WELCOME SECTION ---------- */
+.welcome-section {
+  background: #F7F8F2;
+  padding-top: 72px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid #E2E6DC;
+}
+
+.welcome-container {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Left */
+.welcome-left {
+  padding-top: 8px;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8FA98B;
+  margin-bottom: 18px;
+}
+
+.welcome-headline {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #355744;
+  margin-bottom: 22px;
+  letter-spacing: -0.02em;
+}
+
+.welcome-body {
+  font-size: 1rem;
+  color: #303A32;
+  max-width: 480px;
+  margin-bottom: 28px;
+  line-height: 1.75;
+}
+
+.welcome-body strong {
+  font-weight: 600;
+  color: #355744;
+}
+
+/* Role chip row */
+.role-chip-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #747C72;
+  padding: 7px 14px 7px 12px;
+  border: 1px solid #E2E6DC;
+  border-radius: 4px;
+  background: #F7F8F2;
+}
+
+/* Role badges — used by JS too */
+.role-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.role-badge--new    { background: #DCE8D5; color: #355744; }
+.role-badge--intern { background: #F5ECD6; color: #6B4C1A; }
+.role-badge--grad   { background: #F3DFE0; color: #7A3235; }
+
+/* Right — setup panel */
+.welcome-right {
+  background: #F0F3EC;
+  border: 1px solid #E2E6DC;
+  border-radius: 6px;
+  padding: 28px 26px 30px;
+}
+
+.panel-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8FA98B;
+  margin-bottom: 22px;
+}
+
+.field-group {
+  margin-bottom: 18px;
+}
+
+.field-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #303A32;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.field-input {
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #D0D5CA;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  color: #303A32;
+  background: #F7F8F2;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field-input:focus {
+  border-color: #8FA98B;
+  box-shadow: 0 0 0 3px rgba(143,169,139,.2);
+}
+
+/* ---------- PROGRESS BAND ---------- */
+.progress-band {
+  background: #DCE8D5;
+  border-bottom: 1px solid #C6D6BE;
+  padding: 28px 0;
+}
+
+.progress-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.progress-text-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.progress-heading {
+  font-family: "Georgia", serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #355744;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.progress-message {
+  font-size: 0.875rem;
+  color: #4D5E4F;
+  line-height: 1.5;
+}
+
+.progress-meter-col {
+  flex: 1;
+  min-width: 260px;
+  padding-top: 2px;
+}
+
+.progress-fraction {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 1.5rem;
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  color: #355744;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.progress-sep {
+  font-size: 1rem;
+  color: #8FA98B;
+  padding: 0 2px;
+}
+
+.progress-pct {
+  font-size: 0.8rem;
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  font-weight: 600;
+  color: #8FA98B;
+  margin-left: 8px;
+  align-self: center;
+}
+
+.progress-bar-track {
+  height: 5px;
+  background: rgba(53,87,68,.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #355744;
+  border-radius: 999px;
+  transition: width 0.45s cubic-bezier(.4,0,.2,1);
+}
+
+/* ---------- SECTION HEADER ---------- */
+.section-header {
+  margin-bottom: 44px;
+}
+
+.section-header--inline {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.section-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  color: #355744;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.section-sub {
+  font-size: 0.9rem;
+  color: #747C72;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+/* ---------- CHECKLIST SECTION ---------- */
+.checklist-section {
+  background: #F7F8F2;
+  border-bottom: 1px solid #E2E6DC;
+}
+
+.checklist-layout {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 52px;
+  align-items: start;
+}
+
+.checklist-divider {
+  background: #E2E6DC;
+  width: 1px;
+  align-self: stretch;
+}
+
+.column-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.column-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8FA98B;
+}
+
+.column-tag--week {
+  color: #B08070;
+}
+
+.group-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #747C72;
+  letter-spacing: 0.02em;
+}
+
+.column-title {
+  font-family: "Georgia", serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #303A32;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #E2E6DC;
+}
+
+/* Checklist list */
+.checklist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.checklist-item {
+  border-bottom: 1px solid #EFF0EA;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.check-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 12px 4px 12px 0;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.12s;
+}
+
+.check-label:hover {
+  background: #F2F4EE;
+}
+
+/* Hidden native checkbox */
+.check-input {
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+}
+
+/* Custom checkbox */
+.check-box {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid #C4CCBF;
+  border-radius: 3px;
+  background: #F7F8F2;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+}
+
+.check-input:focus-visible + .check-box {
+  outline: 2px solid #8FA98B;
+  outline-offset: 2px;
+}
+
+.check-input:checked + .check-box {
+  background: #355744;
+  border-color: #355744;
+}
+
+.check-input:checked + .check-box::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 8px;
+  border: 1.5px solid #F7F8F2;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.check-text {
+  font-size: 0.88rem;
+  color: #303A32;
+  line-height: 1.55;
+}
+
+/* Done state */
+.checklist-item.is-done .check-text {
+  color: #9EA89C;
+  text-decoration: line-through;
+  text-decoration-color: #B8C2B4;
+}
+
+/* ---------- QUESTIONS SECTION ---------- */
+.questions-section {
+  background: #F0F3EC;
+  border-bottom: 1px solid #E2E6DC;
+}
+
+.questions-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid #E2E6DC;
+}
+
+.q-group {
+  padding: 32px 28px 32px 0;
+  border-right: 1px solid #E2E6DC;
+}
+
+.q-group:last-child {
+  border-right: none;
+  padding-right: 0;
+  padding-left: 28px;
+}
+
+.q-group:nth-child(2) {
+  padding-left: 28px;
+}
+
+.q-group-title {
+  font-family: "Georgia", serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #303A32;
+  margin-bottom: 18px;
+  padding-bottom: 0;
+}
+
+.q-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.q-list li {
+  font-size: 0.84rem;
+  color: #555D53;
+  line-height: 1.55;
+  padding-left: 12px;
+  position: relative;
+}
+
+.q-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #E8C5C6;
+  font-size: 0.75rem;
+  top: 2px;
+}
+
+/* ---------- BUDDY / CHAT SECTION ---------- */
+.buddy-section {
+  background: #F7F8F2;
+}
+
+.buddy-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.buddy-intro {
+  padding-top: 4px;
+  position: sticky;
+  top: 80px;
+}
+
+.buddy-intro .section-sub {
+  margin-top: 12px;
+}
+
+.demo-note {
+  font-style: italic;
+  color: #B08070;
+}
+
+/* Chat shell */
+.chat-shell {
+  border: 1px solid #E2E6DC;
+  border-radius: 6px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow: hidden;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 22px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar { width: 4px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: #D0D5CA; border-radius: 2px; }
+
+/* Messages */
+.msg {
+  display: flex;
+  gap: 10px;
+  max-width: 85%;
+  animation: msgIn 0.2s ease forwards;
+}
+
+@keyframes msgIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.msg--buddy { align-self: flex-start; }
+.msg--user  { align-self: flex-end; flex-direction: row-reverse; }
+
+.msg-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #DCE8D5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.msg--user .msg-avatar {
+  background: #355744;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.msg-bubble {
+  background: #F0F3EC;
+  border-radius: 2px 10px 10px 10px;
+  padding: 11px 14px;
+  font-size: 0.875rem;
+  color: #303A32;
+  line-height: 1.6;
+  border: 1px solid #E2E6DC;
+}
+
+.msg-bubble p + p { margin-top: 6px; }
+
+.msg--user .msg-bubble {
+  background: #355744;
+  color: #F7F8F2;
+  border-radius: 10px 2px 10px 10px;
+  border-color: transparent;
+}
+
+.msg-typing .msg-bubble {
+  color: #9EA89C;
+  font-style: italic;
+}
+
+/* Quick replies */
+.quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+  padding: 10px 20px 12px;
+  border-top: 1px solid #EFF0EA;
+  background: #F7F8F2;
+}
+
+.quick-label {
+  width: 100%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9EA89C;
+}
+
+.quick-btn {
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  color: #355744;
+  background: transparent;
+  border: 1px solid #C6D6BE;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.quick-btn:hover {
+  background: #DCE8D5;
+  border-color: #8FA98B;
+}
+
+.quick-btn:focus-visible {
+  outline: 2px solid #8FA98B;
+  outline-offset: 2px;
+}
+
+.quick-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Chat input */
+.chat-input-bar {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px 14px;
+  border-top: 1px solid #E2E6DC;
+  background: #FFFFFF;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 9px 12px;
+  border: 1px solid #D0D5CA;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  color: #303A32;
+  background: #F7F8F2;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.chat-input:focus {
+  border-color: #8FA98B;
+  box-shadow: 0 0 0 3px rgba(143,169,139,.18);
+  background: #FFFFFF;
+}
+
+.chat-input:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.send-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: #355744;
+  color: #F7F8F2;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+  white-space: nowrap;
+}
+
+.send-btn:hover { background: #2A4538; }
+.send-btn:active { opacity: 0.85; }
+.send-btn:disabled { opacity: 0.4; cursor: wait; }
+
+.send-btn:focus-visible {
+  outline: 2px solid #8FA98B;
+  outline-offset: 2px;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background: #303A32;
+  padding: 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-brand {
+  font-family: "Georgia", serif;
+  font-size: 0.9rem;
+  color: #8FA98B;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: #5A645C;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .welcome-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .welcome-right {
+    max-width: 400px;
+  }
+
+  .buddy-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .buddy-intro {
+    position: static;
+  }
+
+  .questions-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .q-group:nth-child(3) {
+    grid-column: span 2;
+    border-right: none;
+    border-top: 1px solid #E2E6DC;
+    padding: 28px 0 0;
+  }
+}
+
+@media (max-width: 780px) {
+  .checklist-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .checklist-divider {
+    display: none;
+  }
+
+  .checklist-column:first-child {
+    padding-bottom: 48px;
+    border-bottom: 1px solid #E2E6DC;
+    margin-bottom: 48px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .welcome-headline {
+    font-size: 1.75rem;
+  }
+
+  .questions-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .q-group,
+  .q-group:nth-child(2),
+  .q-group:last-child {
+    border-right: none;
+    border-top: 1px solid #E2E6DC;
+    padding: 24px 0 0;
+    margin-bottom: 0;
+  }
+
+  .q-group:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .q-group:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .progress-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .progress-meter-col {
+    width: 100%;
+  }
+
+  .chat-shell {
+    height: 460px;
+  }
+
+  .msg {
+    max-width: 92%;
+  }
+}
